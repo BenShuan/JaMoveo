@@ -50,7 +50,7 @@ export default function SignIn(props) {
     loginAction({
       username: data.username,
       password: data.password,
-    },errorLogIn)
+    },setErrorLogIn)
 
   };
 
