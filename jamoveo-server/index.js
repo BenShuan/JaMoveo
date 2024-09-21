@@ -9,8 +9,7 @@ app.use(cors());
 
 app.use(express.json());
 
-const httpServer = createServer(app);
-const io = new Server(httpServer, {
+const io = new Server(app, {
   cors: {
     origin: "*",
   },
@@ -59,6 +58,6 @@ app.use("/auth", authRoute);
 const songsRoute = require("./routes/songs");
 app.use("/songs", songsRoute);
 
-httpServer.listen(3000);
+app.listen(3000);
 
 module.exports = app;
